@@ -22,3 +22,7 @@
   border-radius: 3px;
   cursor: pointer;
 }
+
+.errorMessage{
+	color: #f00
+}
