@@ -32,9 +32,7 @@ const validationsForm = (formulario) => {
         errors.repeatPassword = 'Las contraseñas no coinciden'
     }
     
-    console.log(errors)
     return errors
-
 
 }
 
