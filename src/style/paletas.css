@@ -1,0 +1,9 @@
+.paletas{
+    padding-top: 10px;
+    
+}
+
+.title-paletas{
+    display: flex;
+    justify-content: center;
+}

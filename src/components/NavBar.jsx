@@ -1,9 +1,12 @@
 //import { Switch, Route, NavLink, Link, useRouteMatch, useParams, useHistory, useLocation } from 'react-router-dom'
-import { Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import '../style/navbar.css'
 import Logo from './Logo'
 
-const NavBar = () => {
+const NavBar = ({ isActive }) => {
+
+    //isActive
+    //recibe como parametro location y match el NavLink
 
     return (
         <div>
@@ -11,30 +14,33 @@ const NavBar = () => {
                 <Logo />
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link 
+                        <NavLink 
                             className="nav-link active" 
                             aria-current="page"
                             to='/'>
                                 Home
-                        </Link > 
-                        <Link  
+                        </NavLink> 
+                        <NavLink  
                             className="nav-link active" 
                             aria-current="page" 
                             to='/paletas'>
                                 Paletas
-                        </Link >
-                        <Link  
+                        </NavLink>
+                        <NavLink  
                             className="nav-link active" 
                             aria-current="page" 
                             to='/indumentaria'>
                                 Indumentaria
-                        </Link >
-                        <Link  
+                        </NavLink>
+                        <NavLink  
                             className="nav-link active" 
                             aria-current="page" 
                             to='login'> 
-                                Iniciar Sesion
-                        </Link > 
+                                {isActive 
+                                    ? "Iniciar sesion"
+                                    : "Registrarse"
+                                }
+                        </NavLink> 
                     </div>
                 </div>
             </nav>

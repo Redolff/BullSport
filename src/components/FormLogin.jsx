@@ -17,7 +17,7 @@ const FormLogin = () => {
     )
 
     return (
-        <form>
+        <form className='form-login'>
             <h1> Iniciar Sesion: </h1>
             <Input 
                 label='Usuario:'
