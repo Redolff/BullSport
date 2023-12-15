@@ -3,6 +3,7 @@ import useAuth from "../hooks/useAuth"
 
 const ProtectedRoute = ({ children }) => {
 
+    console.log(children)
     const { isAuthenticated } = useAuth()
 
     if(!isAuthenticated) {

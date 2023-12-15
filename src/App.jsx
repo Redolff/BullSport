@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Paletas from './components/Paletas'
 import { useState } from 'react'
 import DetallePaleta from './components/DetallePaleta'
+import Indumentaria from './components/Indumentaria'
 
 const App = () => {	
 
@@ -24,9 +25,9 @@ const App = () => {
 				<Route 
 					path='/paletas' 
 					element={
-						isActive 
-						? <Paletas />
-						: null
+						//isActive ? 
+						<Paletas />
+						//: null
 					} 
 				/>
 				<Route 
@@ -35,7 +36,7 @@ const App = () => {
 				/>
 				<Route 
 					path='/indumentaria' 
-					element={"<Indumentaria />"} 
+					element={<Indumentaria />} 
 				/>
 				<Route 
 					path='/login' 
