@@ -4,18 +4,21 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Login from './components/Login'
 import Paletas from './components/Paletas'
-import { useState } from 'react'
 import DetallePaleta from './components/DetallePaleta'
 import Indumentaria from './components/Indumentaria'
+import ProtectedRoute from './components/ProtectedRoute'
+import useAuth from '../src/hooks/useAuth.jsx'
 
 const App = () => {	
 
-	const [isActive, setActive] = useState(false)
+	//const [isActive, setActive] = useState(false)
+	const { isAuthenticated, login, logout } = useAuth()
 	
 	return (
 		<div className='app'>
 			<NavBar 
-				isActive={isActive}	
+				//isActive={isActive}
+				isAuthenticated={isAuthenticated}	
 			/>
 			<Routes>
 				<Route 
@@ -26,8 +29,9 @@ const App = () => {
 					path='/paletas' 
 					element={
 						//isActive ? 
-						<Paletas />
-						//: null
+						<ProtectedRoute>
+							<Paletas />
+						</ProtectedRoute>
 					} 
 				/>
 				<Route 
@@ -41,7 +45,10 @@ const App = () => {
 				<Route 
 					path='/login' 
 					element={<Login 
-								isActive={isActive} 
+								isAuthenticated={isAuthenticated}
+								login={login}
+								logout={logout}
+								//isActive={isActive} 
 							/>} 
 				/>
 			</Routes>

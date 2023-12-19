@@ -3,9 +3,8 @@ import { NavLink, Outlet } from 'react-router-dom'
 import '../style/navbar.css'
 import Logo from './Logo'
 
-const NavBar = ({ isActive }) => {
+const NavBar = ({ /* isActive */ isAuthenticated }) => {
 
-    //isActive
     //recibe como parametro location y match el NavLink
 
     return (
@@ -36,9 +35,11 @@ const NavBar = ({ isActive }) => {
                             className="nav-link active" 
                             aria-current="page" 
                             to='login'> 
-                                {isActive 
+                                {isAuthenticated
+                                //isActive
                                     ? "Iniciar sesion"
                                     : "Registrarse"
+                                    //"Iniciar sesion"
                                 }
                         </NavLink> 
                     </div>
