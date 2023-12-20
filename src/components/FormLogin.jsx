@@ -2,8 +2,9 @@ import useFormulario from '../hooks/useFormulario'
 import Input from './Input'
 import ErrorMessage from './ErrorMessage'
 import validationsForm from '../helpers/validationsForm'
+import { useNavigate, useLocation } from 'react-router-dom'
 
-const FormLogin = () => {
+const FormLogin = ({ login, logout }) => {
 
     const [formulario, handleChange, errors, handleSubmit] = useFormulario({
         name: '',
@@ -15,6 +16,14 @@ const FormLogin = () => {
     },
         validationsForm
     )
+
+    const navigate = useNavigate()
+    const { state } = useLocation()
+
+    const handleClick = () => {
+        login()
+        navigate(state.location.pathname)
+    }
 
     return (
         <form className='form-login'>
@@ -58,7 +67,13 @@ const FormLogin = () => {
                     error={errors.repeatPassword} 
                 /> 
             }
-            <button className="button" type="submit">Iniciar sesion</button>
+            <button 
+                className="button" 
+                type="submit"
+                onClick={handleClick}
+            >
+                Iniciar sesion
+            </button>
         </form>
     )
 }

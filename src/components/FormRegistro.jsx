@@ -2,8 +2,9 @@ import useFormulario from '../hooks/useFormulario'
 import Input from './Input'
 import ErrorMessage from './ErrorMessage'
 import validationsForm from '../helpers/validationsForm'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-const FormRegistro = () => {
+const FormRegistro = ({ login, logout }) => {
 
     const [formulario, handleChange, errors, handleSubmit] = useFormulario({
         name: '',
@@ -15,6 +16,14 @@ const FormRegistro = () => {
     },
         validationsForm
     )
+
+    const navigate = useNavigate()
+    const { state } = useLocation()
+
+    const handleClick = () => {
+        login()
+        navigate(state.location.pathname)
+    }
 
     return (
         <form className="form-login" onSubmit={handleSubmit}>
@@ -97,7 +106,13 @@ const FormRegistro = () => {
                     error={errors.repeatPassword} 
                 /> 
             }
-            <button className="button" type="submit">Registrarse</button>
+            <button 
+                className="button" 
+                type="submit"
+                onClick={handleClick}
+            >
+                Registrarse
+            </button>
         </form>
     )
 }

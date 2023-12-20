@@ -2,16 +2,19 @@ import '../style/form.css'
 import FormRegistro from './FormRegistro'
 import FormLogin from './FormLogin'
 
-const Login = ({ /* isActive */ isAuthenticated, login, logout }) => {
-
-    //logica del usuario, si esta registrado se muestra form de registro, si no se inicia sesion
+const Login = ({ isAuthenticated, login, logout }) => {
 
     return (        
         <div className="container">
-            {//isActive
-                isAuthenticated 
-                ? <FormLogin />
-                : <FormRegistro />
+            {isAuthenticated 
+                ? <FormLogin 
+                    login={login}
+                    logout={logout}
+                />
+                : <FormRegistro 
+                    login={login}
+                    logout={logout}
+                />
             }
         </div>
     )

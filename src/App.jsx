@@ -11,13 +11,11 @@ import useAuth from '../src/hooks/useAuth.jsx'
 
 const App = () => {	
 
-	//const [isActive, setActive] = useState(false)
 	const { isAuthenticated, login, logout } = useAuth()
 	
 	return (
 		<div className='app'>
 			<NavBar 
-				//isActive={isActive}
 				isAuthenticated={isAuthenticated}	
 			/>
 			<Routes>
@@ -28,7 +26,6 @@ const App = () => {
 				<Route 
 					path='/paletas' 
 					element={
-						//isActive ? 
 						<ProtectedRoute>
 							<Paletas />
 						</ProtectedRoute>
@@ -40,7 +37,11 @@ const App = () => {
 				/>
 				<Route 
 					path='/indumentaria' 
-					element={<Indumentaria />} 
+					element={
+						<ProtectedRoute>
+							<Indumentaria />
+						</ProtectedRoute>
+					} 
 				/>
 				<Route 
 					path='/login' 
@@ -48,7 +49,6 @@ const App = () => {
 								isAuthenticated={isAuthenticated}
 								login={login}
 								logout={logout}
-								//isActive={isActive} 
 							/>} 
 				/>
 			</Routes>
