@@ -22,7 +22,7 @@ const FormRegistro = ({ login, logout }) => {
 
     const handleClick = () => {
         login()
-        navigate(state.location.pathname)
+        navigate('/')
     }
 
     return (
