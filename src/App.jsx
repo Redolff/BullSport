@@ -3,12 +3,12 @@ import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'	
 import Home from './components/Home'
 import Login from './components/Login'
+import Registro from './components/Registro'
 import Paletas from './components/Paletas'
 import DetallePaleta from './components/DetallePaleta'
 import Indumentaria from './components/Indumentaria'
 import ProtectedRoute from './components/ProtectedRoute'
 import useAuth from '../src/hooks/useAuth.jsx'
-import FormRegistro from './components/FormRegistro.jsx'
 
 const App = () => {	
 
@@ -54,7 +54,7 @@ const App = () => {
 				/>
 				<Route 
 					path='/registro'
-					element={<FormRegistro 
+					element={<Registro 
 								isAuthenticated={isAuthenticated}
 								login={login}
 								logout={logout}
