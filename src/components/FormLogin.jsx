@@ -2,7 +2,7 @@ import useFormulario from '../hooks/useFormulario'
 import Input from './Input'
 import ErrorMessage from './ErrorMessage'
 import validationsForm from '../helpers/validationsForm'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, Link } from 'react-router-dom'
 
 const FormLogin = ({ login, logout }) => {
 
@@ -74,6 +74,8 @@ const FormLogin = ({ login, logout }) => {
             >
                 Iniciar sesion
             </button>
+            <h2 className='title-secundary'>¿No tienes cuenta aun?</h2>
+            <p> <Link to={'/registro'}> ¡Registrate! </Link>  </p>
         </form>
     )
 }

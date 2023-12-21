@@ -6,16 +6,10 @@ const Login = ({ isAuthenticated, login, logout }) => {
 
     return (        
         <div className="container">
-            {isAuthenticated 
-                ? <FormLogin 
-                    login={login}
-                    logout={logout}
-                />
-                : <FormRegistro 
-                    login={login}
-                    logout={logout}
-                />
-            }
+            <FormLogin 
+                login={login}
+                logout={logout}
+            />
         </div>
     )
 }

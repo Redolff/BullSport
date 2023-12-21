@@ -8,6 +8,7 @@ import DetallePaleta from './components/DetallePaleta'
 import Indumentaria from './components/Indumentaria'
 import ProtectedRoute from './components/ProtectedRoute'
 import useAuth from '../src/hooks/useAuth.jsx'
+import FormRegistro from './components/FormRegistro.jsx'
 
 const App = () => {	
 
@@ -50,6 +51,14 @@ const App = () => {
 								login={login}
 								logout={logout}
 							/>} 
+				/>
+				<Route 
+					path='/registro'
+					element={<FormRegistro 
+								isAuthenticated={isAuthenticated}
+								login={login}
+								logout={logout}
+							/>}
 				/>
 			</Routes>
 		</div>

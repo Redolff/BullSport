@@ -35,12 +35,7 @@ const NavBar = ({ /* isActive */ isAuthenticated }) => {
                             className="nav-link active" 
                             aria-current="page" 
                             to='login'> 
-                                {isAuthenticated
-                                //isActive
-                                    ? "Iniciar sesion"
-                                    : "Registrarse"
-                                    //"Iniciar sesion"
-                                }
+                                Iniciar sesion
                         </NavLink> 
                     </div>
                 </div>
